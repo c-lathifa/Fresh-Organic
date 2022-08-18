@@ -1,0 +1,128 @@
+[
+    {
+        "id": 1,
+        "name": "Tomatoes",
+        "image": "./images/product-2.png",
+        "quantity": 1,
+        "price": 1000
+    },
+    {
+        "id": 2,
+        "name": "Small Eggplant",
+        "image": "./images/product-5.png",
+        "quantity": 1,
+        "price": 900
+    },
+    {
+        "id": 3,
+        "name": "Carrots",
+        "image": "./images/product-9.png",
+        "quantity": 1,
+        "price": 800
+    },
+    {
+        "id": 4,
+        "name": "Banana",
+        "image": "./images/product-1.png",
+        "quantity": 1,
+        "price": 500
+    },
+    {
+        "id": 5,
+        "name": "Orange",
+        "image": "./images/product-3.png",
+        "quantity": 1,
+        "price": 700 
+    },
+    {
+        "id": 6,
+        "name": "Apple",
+        "image": "./images/product-7.png",
+        "quantity": 1,
+        "price": 900
+    },
+    {
+        "id": 7,
+        "name": "Milk",
+        "image": "./images/product-4.png",
+        "quantity": 1,
+        "price": 400
+    },
+    {
+        "id": 8,
+        "name": "Butter",
+        "image": "./images/product-8.png",
+        "quantity": 1,
+        "price": 600 
+    },
+    {
+        "id": 9,
+        "name": "Cheese",
+        "image": "./images/cheese.png",
+        "quantity": 1,
+        "price": 800
+    },
+    {
+        "id": 10,
+        "name": "Mutton",
+        "image": "./images/deal-img2.png",
+        "quantity": 1,
+        "price": 2100
+    },
+    {
+        "id": 11,
+        "name": "Chicken",
+        "image": "./images/chicken.jpg",
+        "quantity": 1,
+        "price": 1900
+    },
+    {
+        "id": 12,
+        "name": "Steak",
+        "image": "./images/steak.jpg",
+        "quantity": 1,
+        "price": 2600
+    },
+    {
+        "id": 13,
+        "name": "Carolina Reapers",
+        "image": "./images/category-4.png",
+        "quantity": 1,
+        "price": 1900
+    },
+    {
+        "id": 14,
+        "name": "Red-chilli",
+        "image": "./images/chilli.jpg",
+        "quantity": 1,
+        "price": 300
+    },
+    {
+        "id": 15,
+        "name": "Green chilli",
+        "image": "./images/green-chilli.jpg",
+        "quantity": 1,
+        "price": 300
+    },
+    {
+        "id": 16,
+        "name": "Lays",
+        "image": "./images/lays.png",
+        "quantity": 1,
+        "price": 200
+    },
+    {
+        "id": 17,
+        "name": "Noodles",
+        "image": "./images/noodles.png",
+        "quantity": 1,
+        "price": 400
+    },
+    {
+        "id": 18,
+        "name": "Coke",
+        "image": "./images/coke.jpg",
+        "quantity": 1,
+        "price": 400
+    }
+]

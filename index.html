@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="items.css">
+    <script defer src="https://use.fontawesome.com/releases/v6.1.1/js/all.js" integrity="sha384-xBXmu0dk1bEoiwd71wOonQLyH+VpgR1XcDH3rtxrLww5ajNTuMvBdL5SOiFZnNdp" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://unpkg.com/boxicons@2.1.2/dist/boxicons.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="index.js" defer></script>
+    <!-- <script src="cart.js" defer></script> -->
+
+    <title>Fresh&Organic</title>
+</head>
+<body>
+    
+    <!-- ---------------------------header starts------------------- -->
+    <header class="header-1">
+        <div class="logo-section" id="header">
+            <a href="index.html" class="logo"><i class="fa-solid fa-bag-shopping"></i>Fresh & Organic</a>
+        </div>
+        <div class="header-2">
+            <nav class="nav-bar">
+                <a href="index.html" class="icon"><box-icon name='home' animation="tada-hover"></box-icon></a>
+                <a href="items.html" class="icon"><box-icon name='grid-alt'animation="tada-hover" ></box-icon></a>
+                <a href="user.html" class="icon"><box-icon name='user'animation="tada-hover"></box-icon></a>
+                <!-- <a href="#" class="icon"><box-icon name='cart-alt'animation="tada-hover"></box-icon></a> -->
+            </nav>
+        </div>
+    </header>
+    <!-- ---------------------------header ends------------------- -->
+
+
+    <!-- ---------------------------hero starts------------------- -->
+    <section class="hero">
+        <div class="hero-img">
+            <img src="./images/hero.png" alt="hero-section-image">
+        </div>
+        <div class="content">
+            <h4>Welcome to our store</h4>
+            <h3>Fresh & Organic</h3>
+            <h5>Where you can find</h5>
+            <h2>Your daily need products</h2>
+            <a href="items.html" class="btn">Get Started</a>
+        </div>    
+    </section>
+    <!-- ---------------------------hero ends------------------- -->
+
+   
+
+
+    <!-- ---------------------------banner starts------------------- -->
+    <section class="banner-container">
+        <div class="banner-1 banner">
+            <div class="banner-content overlay">
+                <h3>SPECIAL OFFER</h3>
+                <p>Get Upto 30%</p>
+                <a href="#category" class="banner-btn">Shop Now</a>
+            </div>
+        </div>
+        <div class="banner-2 banner">
+            <div class="banner-content overlay">
+                <h3>SPECIAL OFFER</h3>
+                <p>Get Upto 30%</p>
+                <a href="#category" class="banner-btn">Shop Now</a>
+            </div>
+        </div>
+    </section>
+    <!-- ---------------------------banner ends------------------- -->
+
+
+
+    <!-- ---------------------------newsletter starts------------------- -->
+    <section class="news-letter">
+        <div class="news-letter-text">
+            <h4>Subscribe and get 10$off on your first order</h4>
+          </div>
+          <div class="news-letter-signup">
+            <input class="sign-up" type="text" placeholder="Enter your e-mail address">
+            <button class="btn-banner btn-signup">Sign Up</button>
+          </div>
+    </section>
+    <!-- ---------------------------newsletter ends------------------- -->
+
+
+
+    <template id="cart-item-template">
+        <div data-items class="mb-6">
+          <div class="block relative h-24 rounded overflow-hidden">
+            <img data-image id="cart-img" alt="ecommerce" class="object-cover object-center w-full h-full block rounded">
+            <button data-remove-from-cart-button class="absolute top-0 right-0 bg-black rounded-tr text-white w-6 h-6 text-lg flex justify-center items-center">&times;</button>
+          </div>
+          <div class="mt-2 flex justify-between">
+            <div class="flex items-center title-font">
+              <h2 data-name class="text-gray-900 text-lg font-medium"></h2>
+              <span data-quantity class="text-gray-600 text-sm font-bold ml-1"></span>
+            </div>
+            <div data-price></div>
+          </div>
+        </div>  
+      </template>
+  
+  
+  <section>
+      <div data-cart-items-wrapper class="mb-4 bottom-14 z-10 right-0 mr-4 mt-25 fixed">
+        <div style="max-height:450px" class="bg-white text-gray-50 body-font shadow-lg border rounded-lg flex flex-col">
+          <div class="overflow-y-auto px-4 pt-4" id="cart-container">
+  
+          </div>
+          <div class="flex justify-between items-end border-t p-2">
+            <span  class="font-bold text-lg uppercase">Total</span>
+            <span cart-total-price class="font-bold"></span>
+          </div>
+          <button class="px-4 py-1 m-2 text-sm text-red-500 font-semibold rounded-full border border-purple-200 hover:text-white hover:bg-red-500 hover:border-transparent focus:outline-none focus:ring-1 focus:ring-red-500 focus:ring-offset-2">PURCHASE</button>
+        </div>
+      </div>
+      <button data-cart-button class="fixed bottom-5 right-5 mr-4 mt-4 w-12 p-2 rounded-full text-white bg-yellow-300  z-10">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+        </svg>
+        <div class="bg-red-500 rounded-full text-xs absolute w-6 h-6 flex justify-center items-center right-0 bottom-0 transform translate-x-2 translate-y-2">2</div>
+      </button>
+    </section>
+  
+    
+    <!-- ---------------------------footer starts------------------- -->
+    <footer class="footer">
+        <div class="team footer-info">
+            <h3>Team</h3>
+            <ul>
+                <li>Lathifa</li>
+                <li>Shreya</li>
+                <li>Sreevani</li>
+                <li>Vaishnavi</li>
+                <li>Shireesha</li>
+                <li>Mubeena</li>
+                <li>Chandu</li>
+            </ul>
+        </div>        
+        <div class="about footer-info">
+            <h3>About</h3>
+            <ul>
+                <li>Locations(Coming soon)</li>
+                <li>Privacy</li>
+                <li>Terms</li>
+            </ul>
+        </div>
+        <div class="copyrights footer-info">
+            <p>&#169 2021-2022</p>
+        </div>
+    </footer>
+    <!-- ---------------------------footer ends------------------- -->
+</body>
+</html>
