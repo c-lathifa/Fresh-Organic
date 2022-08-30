@@ -4,27 +4,69 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="items.css"> -->
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="user.css">
     <script defer src="https://use.fontawesome.com/releases/v6.1.1/js/all.js" integrity="sha384-xBXmu0dk1bEoiwd71wOonQLyH+VpgR1XcDH3rtxrLww5ajNTuMvBdL5SOiFZnNdp" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <script src="https://unpkg.com/boxicons@2.1.2/dist/boxicons.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
-    <script src="index.js" defer></script>
-    <!-- <script src="cart.js" defer></script> -->
-
+    <script src="/user.js" defer></script>
     <title>Fresh&Organic</title>
 </head>         
 <body>
-    <div class="user">
-        <div class="user-info">
-            <div class="user-details">
-                
-            </div>
-        </div>
-    </div>
+	<div class="container">
+		<form action="#" class="login active">
+			<h2 class="title">Login with your account</h2>
+			<div class="form-group">
+				<label for="email">Email</label>
+				<div class="input-group">
+					<input type="email" id="email" placeholder="Email address">
+					<i class='bx bx-envelope'></i>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="password">Password</label>
+				<div class="input-group">
+					<input type="password" pattern=".{8,}" id="password" placeholder="Your password">
+					<i class='bx bx-lock-alt' ></i>
+				</div>
+				<span class="help-text">At least 8 characters</span>
+			</div>
+			<button type="submit" class="btn-submit">Login</button>
+			<a href="#">Forgot password?</a>
+			<p>I don't have an account. <a href="#" onclick="switchForm('register', event)">Register</a></p>
+			<button formaction = "index.html" class="btn-submit">Go to home</button>
+		</form>
+
+		<form action="#" class="register">
+			<h2 class="title">Register your account</h2>
+			<div class="form-group">
+				<label for="email">Email</label>
+				<div class="input-group">
+					<input type="email" id="email" placeholder="Email address">
+					<i class='bx bx-envelope'></i>
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="password">Password</label>
+				<div class="input-group">
+					<input type="password" pattern=".{8,}" id="password" placeholder="Your password">
+					<i class='bx bx-lock-alt' ></i>
+				</div>
+				<span class="help-text">At least 8 characters</span>
+			</div>
+			<div class="form-group">
+				<label for="confirm-pass">Confirm password</label>
+				<div class="input-group">
+					<input type="password" id="confirm-pass" placeholder="Enter password again">
+					<i class='bx bx-lock-alt' ></i>
+				</div>
+				<span class="help-text">Confirm password must be same with password</span>
+			</div>
+			<button type="submit" class="btn-submit">Register</button>
+			<p>I already have an account. <a href="#" onclick="switchForm('login', event)">Login</a></p>
+		</form>
+	</div>
+
 </body>
+</html>

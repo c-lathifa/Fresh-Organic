@@ -5,7 +5,7 @@ function addGlobalEventListener(type, selector, callback){
         }
 }
 )}
-const cartItemWrapper =document.querySelector("[data-cart-items-wrapper]")
+const cartItemWrapper = document.querySelector("[data-cart-items-wrapper]")
 const cartButton = document.querySelector("[data-cart-button]")
 let mainObj = {}
 fetch('./items.json').then(function(response){
@@ -38,7 +38,12 @@ let itemContainer = document.querySelector("#item-container")
 let template = document.querySelector("#items-template")
 let cartContainer = document.querySelector("#cart-container")
 let cartTotal = document.querySelector("[cart-total-price]")
+let cartQuantity = document.querySelector("[data-cart-quantity")
 const SESSION_STORAGE_KEY = 'SHOPPING_CART-cart'
+const cartIcon = document.querySelector("[data-cart]")
+const purchaseBtn = document.querySelector("[data-purchase]")
+
+
 function renderItems(data){
     const storeTemplate = template.content.cloneNode(true)
     const storecontainer = storeTemplate.querySelector("[data-store-items]")
@@ -62,6 +67,7 @@ function renderItems(data){
 
 
 function renderCartItems(arr){
+    
     const formatter = new Intl.NumberFormat(undefined, {
         style:"currency",
         currency:"USD"
@@ -70,12 +76,12 @@ function renderCartItems(arr){
         const data = mainObj.find(i => entry.id === i.id)
         return sum + data.price * entry.quantity
     }, 0)
+
     cartTotal.innerText = formatter.format(totalCents / 100)
     cartContainer.innerHTML = ''
     shoppingCart.forEach(entry =>{
     const data = mainObj.find(i => entry.id === i.id)
     const cartTemplate = cartItemTemplate.content.cloneNode(true)
-
     const storecontainer = cartTemplate.querySelector("[data-items]")
     storecontainer.dataset.dataId = data.id
     // console.log(storecontainer)
@@ -96,11 +102,30 @@ function renderCartItems(arr){
         currency:"USD"
     })
     price.innerText = formatter.format((data.price * entry.quantity)/ 100)
-
     cartContainer.append(cartTemplate)
     })
-    
+    cartQuantity.innerText = shoppingCart.length
 }
+
+
+function renderCart(){
+    if(shoppingCart.length === 0) {
+        hideCart()
+    }else{
+        showCart()
+        renderCartItems()
+    }
+}
+
+function showCart(){
+    cartIcon.classList.add("invisible")
+}
+
+function hideCart(){
+    cartIcon.classList.remove("invisible")
+    cartItemWrapper.classList.add("invisible")
+}
+
 function addToCart (id){
     const exsistingItem = shoppingCart.find(entry => entry.id === id)
 
@@ -118,7 +143,6 @@ function addToCart (id){
 document.addEventListener("click", e => {
     if (e.target.matches("[data-remove-from-cart-button]")){
         let id = parseInt(e.target.closest("[data-items]").dataset.dataId)
-        console.log(id)
         removeCartItems(id)
     }
 })
@@ -137,3 +161,10 @@ function loadCart(){
     const cart = sessionStorage.getItem(SESSION_STORAGE_KEY)
     return JSON.parse(cart) || []
 }
+
+
+purchaseBtn.addEventListener("click", () => {
+  hideCart()
+    alert("Successful Purchase. Thank you for shopping at Fresh&Organic")
+    window.location.href = "./index.html"
+})

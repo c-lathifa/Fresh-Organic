@@ -13,7 +13,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- <script src="https://cdn.tailwindcss.com"></script> -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
-    <script src="index.js" defer></script>
+    <script src="/index.js" defer></script>
     <!-- <script src="cart.js" defer></script> -->
 
     <title>Fresh&Organic</title>
@@ -61,14 +61,14 @@
             <div class="banner-content overlay">
                 <h3>SPECIAL OFFER</h3>
                 <p>Get Upto 30%</p>
-                <a href="#category" class="banner-btn">Shop Now</a>
+                <a href="items.html" class="banner-btn">Shop Now</a>
             </div>
         </div>
         <div class="banner-2 banner">
             <div class="banner-content overlay">
                 <h3>SPECIAL OFFER</h3>
                 <p>Get Upto 30%</p>
-                <a href="#category" class="banner-btn">Shop Now</a>
+                <a href="items.html" class="banner-btn">Shop Now</a>
             </div>
         </div>
     </section>
@@ -107,27 +107,24 @@
       </template>
   
   
-  <section>
-      <div data-cart-items-wrapper class="mb-4 bottom-14 z-10 right-0 mr-4 mt-25 fixed">
-        <div style="max-height:450px" class="bg-white text-gray-50 body-font shadow-lg border rounded-lg flex flex-col">
-          <div class="overflow-y-auto px-4 pt-4" id="cart-container">
-  
+      <section data-cart>
+        <div data-cart-items-wrapper class="invisible mb-4 bottom-14 z-10 right-0 mr-4 mt-25 fixed">
+          <div style="max-height:450px" class="bg-white text-gray-50 body-font shadow-lg border rounded-lg flex flex-col">
+            <div class="overflow-y-auto px-4 pt-4" id="cart-container"></div>
+            <div class="flex justify-between items-end border-t p-2">
+              <span  class="font-bold text-lg uppercase">Total</span>
+              <span cart-total-price class="font-bold"></span>
+            </div>
+            <button data-purchase class="px-4 py-1 m-2 text-sm text-red-500 font-semibold rounded-full border border-purple-200 hover:text-white hover:bg-red-500 hover:border-transparent focus:outline-none focus:ring-1 focus:ring-red-500 focus:ring-offset-2">PURCHASE</button>
           </div>
-          <div class="flex justify-between items-end border-t p-2">
-            <span  class="font-bold text-lg uppercase">Total</span>
-            <span cart-total-price class="font-bold"></span>
-          </div>
-          <button class="px-4 py-1 m-2 text-sm text-red-500 font-semibold rounded-full border border-purple-200 hover:text-white hover:bg-red-500 hover:border-transparent focus:outline-none focus:ring-1 focus:ring-red-500 focus:ring-offset-2">PURCHASE</button>
         </div>
-      </div>
-      <button data-cart-button class="fixed bottom-5 right-5 mr-4 mt-4 w-12 p-2 rounded-full text-white bg-yellow-300  z-10">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
-        </svg>
-        <div class="bg-red-500 rounded-full text-xs absolute w-6 h-6 flex justify-center items-center right-0 bottom-0 transform translate-x-2 translate-y-2">2</div>
-      </button>
-    </section>
-  
+        <button data-cart-button class="fixed bottom-5 right-5 mr-4 mt-4 w-12 p-2 rounded-full text-white bg-yellow-300  z-10">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+          </svg>
+          <div data-cart-quantity class="bg-red-500 rounded-full text-xs absolute w-6 h-6 flex justify-center items-center right-0 bottom-0 transform translate-x-2 translate-y-2"></div>
+        </button>
+      </section>
     
     <!-- ---------------------------footer starts------------------- -->
     <footer class="footer">
