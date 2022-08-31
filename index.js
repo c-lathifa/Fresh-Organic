@@ -13,8 +13,7 @@ fetch('./items.json').then(function(response){
 })
 .then(function(data){
     mainObj = data
-    // console.log(mainObj)
-     setUpStore(data)
+    setUpStore(data)
     }
 )
 let shoppingCart = []
@@ -84,7 +83,6 @@ function renderCartItems(arr){
     const cartTemplate = cartItemTemplate.content.cloneNode(true)
     const storecontainer = cartTemplate.querySelector("[data-items]")
     storecontainer.dataset.dataId = data.id
-    // console.log(storecontainer)
 
     let name = cartTemplate.querySelector("[data-name]")
     name.innerText = data.name
@@ -92,7 +90,7 @@ function renderCartItems(arr){
     let Image = cartTemplate.querySelector("[data-image]")
     Image.src = data.image
 
-    // let quantity = cartTemplate.querySelector("[data-quantity]")
+
     let quantity = cartTemplate.querySelector("[data-quantity]")
     quantity.innerText = `x${entry.quantity}`
     
@@ -134,12 +132,11 @@ function addToCart (id){
     }else{
         shoppingCart.push({id : id, quantity : 1})
     }
-    // console.log(shoppingCart)
     renderCartItems(mainObj)
     savaCart()
 }
 
-// let removeCartItem = document.querySelector("[data-remove-from-cart-button]")
+
 document.addEventListener("click", e => {
     if (e.target.matches("[data-remove-from-cart-button]")){
         let id = parseInt(e.target.closest("[data-items]").dataset.dataId)
@@ -162,9 +159,9 @@ function loadCart(){
     return JSON.parse(cart) || []
 }
 
-
-purchaseBtn.addEventListener("click", () => {
-  hideCart()
+purchaseBtn.addEventListener("click", () =>{
+    hideCart()
+    sessionStorage.removeItem('SHOPPING_CART-cart')
     alert("Successful Purchase. Thank you for shopping at Fresh&Organic")
-    window.location.href = "./index.html"
+    window.location.href = "./items.html"
 })
